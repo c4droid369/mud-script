@@ -1,0 +1,122 @@
+#CLASS {comm-store-tmp} OPEN
+
+#VARIABLE {dump-storage-globals}
+{
+    {global-options} 
+    {
+        {DebugLog} 
+        {
+            {meaning} {是否开启调试日志}
+            {name} {DebugLog}
+            {type} {Bool}
+            {value} {false}
+        }
+        {DebugLogEcho} 
+        {
+            {meaning} {是否显示调试日志}
+            {name} {DebugLogEcho}
+            {type} {Bool}
+            {value} {false}
+        }
+        {DebugTags} 
+        {
+            {meaning} {记录调试日志的 tag 列表}
+            {name} {DebugTags}
+            {type} {Slist}
+            {value} {}
+        }
+        {DisableAllCommands} 
+        {
+            {meaning} {是否禁用所有的触发器和定时器}
+            {name} {DisableAllCommands}
+            {type} {Bool}
+            {value} {false}
+        }
+        {DisableOutput} 
+        {
+            {meaning} {是否禁止向服务器发送命令}
+            {name} {DisableOutput}
+            {type} {Bool}
+            {value} {false}
+        }
+        {DrawRoomMap} 
+        {
+            {meaning} {是否自行绘制房间地图}
+            {name} {DrawRoomMap}
+            {type} {Bool}
+            {value} {false}
+        }
+        {EchoCommand} 
+        {
+            {meaning} {是否回显发送的命令}
+            {name} {EchoCommand}
+            {type} {Bool}
+            {value} {false}
+        }
+        {GMCPDebug} 
+        {
+            {meaning} {是否显示 GMCP 原始数据}
+            {name} {GMCPDebug}
+            {type} {Bool}
+            {value} {false}
+        }
+        {GagMove} 
+        {
+            {meaning} {是否抑制玩家移动信息}
+            {name} {GagMove}
+            {type} {Bool}
+            {value} {true}
+        }
+        {GancheMode} 
+        {
+            {meaning} {是否开启运镖模式}
+            {name} {GancheMode}
+            {type} {Bool}
+            {value} {false}
+        }
+        {HPSummarize.Pause} 
+        {
+            {meaning} {是否暂停 HP 摘要显示}
+            {name} {HPSummarize.Pause}
+            {type} {Bool}
+            {value} {false}
+        }
+        {HPSummarize.PauseTime} 
+        {
+            {meaning} {暂停显示 HP 摘要截止时间}
+            {name} {HPSummarize.PauseTime}
+            {type} {Time}
+            {value} {0}
+        }
+        {KeypadWalk} 
+        {
+            {meaning} {是否开启小键盘走路}
+            {name} {KeypadWalk}
+            {type} {Bool}
+            {value} {false}
+        }
+        {MapDebug} 
+        {
+            {meaning} {房间信息解析调试开关}
+            {name} {MapDebug}
+            {type} {Bool}
+            {value} {false}
+        }
+        {ScreenKeypad} 
+        {
+            {meaning} {是否开启屏幕虚拟键盘}
+            {name} {ScreenKeypad}
+            {type} {Bool}
+            {value} {false}
+        }
+        {ShowRoomView} 
+        {
+            {meaning} {是否显示房间风景}
+            {name} {ShowRoomView}
+            {type} {Bool}
+            {value} {false}
+        }
+    }
+}
+
+#CLASS {comm-store-tmp} CLOSE
