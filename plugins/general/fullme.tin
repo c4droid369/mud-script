@@ -1,0 +1,5 @@
+#variable fullme[META] {
+    {NAME} {fullme}
+    {DESC} {跨平台fullme插件}
+    {AUTHOR} {c4droid}
+};
