@@ -1,0 +1,998 @@
+#CLASS {comm-store-tmp} OPEN
+
+#VARIABLE {dump-map.area.dict}
+{
+    {上饶/上饶} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {铅山县} {jiangzhou;longhu;shangrao}
+        }
+        {LMAP} {上饶}
+        {PP} {上饶}
+    }
+    {中原/中原} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {南阳} {dengfeng;huashancun;luoyang;xiangyang;xuchang}
+        }
+        {LMAP} {中原}
+        {PP} {中原}
+    }
+    {临安府/临安府} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {临安府} {beidukou;huangshan;huzhou;jiankang;jiaxing;meizhuang;xidukou;yuewangmu}
+        }
+        {LMAP} {临安府}
+        {PP} {临安府}
+    }
+    {义兴县/义兴县} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {义兴县} {jiankang-chaoyang;jiankang-zhengyang;suzhou;zhenjiang}
+        }
+        {LMAP} {义兴县}
+        {PP} {义兴县}
+    }
+    {仙霞岭/仙霞岭} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {仙霞岭} {longhu;longquan;quzhou;shangrao}
+        }
+        {LMAP} {仙霞岭}
+        {PP} {仙霞岭}
+    }
+    {代州/代州} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {代州} {baozhou;datong;jinyang}
+        }
+        {LMAP} {代州}
+        {PP} {代州}
+    }
+    {信阳/信阳} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {信阳} {hankou;haozhou;jiangzhou;jingzhou;shashou;xiangyang;xuchang;yangzhou}
+        }
+        {LMAP} {信阳}
+        {PP} {信阳}
+    }
+    {全真教/全真教} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {全真派} {gumu;huashancun}
+        }
+        {LMAP} {全真教}
+        {PP} {全真教}
+    }
+    {兰州/兰州} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {兰州} {chitaodu;qinzhou}
+        }
+        {LMAP} {兰州}
+        {PP} {兰州}
+    }
+    {关外/关外} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {关外} {beijing}
+        }
+        {LMAP} {关外}
+        {PP} {关外}
+    }
+    {凌霄城/凌霄城} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {凌霄城} {zanpu}
+        }
+        {LMAP} {凌霄城}
+        {PP} {凌霄城}
+    }
+    {北京/北京} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {北京南永安门} {anding;baozhou;desheng;guangan;tanggu}
+        }
+        {LMAP} {北京}
+        {PP} {北京}
+    }
+    {华山派/华山} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {华山} {huashancun}
+        }
+        {LMAP} {华山}
+        {PP} {华山派}
+    }
+    {南昌/南昌} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {南昌} {changsha;jiangzhou;longhu;luling;yuanzhou;yueyang}
+        }
+        {LMAP} {南昌}
+        {PP} {南昌}
+    }
+    {古墓/古墓} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {古墓派} {quanzhen}
+        }
+        {LMAP} {古墓}
+        {PP} {古墓}
+    }
+    {嘉兴/嘉兴} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {嘉兴} {huzhou;jiankang;linan;lujiazhuang;murong;suzhou}
+        }
+        {LMAP} {嘉兴}
+        {PP} {嘉兴}
+    }
+    {回族小镇/回族小镇} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {回族小镇} {changan;lingjiu;lingzhou;qinzhou}
+        }
+        {LMAP} {回族小镇}
+        {PP} {回族小镇}
+    }
+    {圣峰嶂/UNKNOWN} 
+    {
+        {COLOR} {}
+        {LINKS} 
+        {
+            {圣峰嶂东部} {chaozhou;xi}
+            {圣峰嶂西部} {dong;guangzhou}
+        }
+        {LMAP} {}
+        {PP} {圣峰嶂}
+    }
+    {处州府/处州府} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {处州府瓯江南渡口} {longquan}
+        }
+        {LMAP} {处州府}
+        {PP} {处州府}
+    }
+    {大同/大同} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {大同} {daizhou;zhangjiakou}
+        }
+        {LMAP} {大同}
+        {PP} {大同}
+    }
+    {大理城/大理城} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {大理城} {chengdu;kunming;tianlong}
+        }
+        {LMAP} {大理城}
+        {PP} {大理城}
+    }
+    {大轮寺/大轮寺} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {赞普广场} {chengdu;dalunsi;lingxiao}
+        }
+        {LMAP} {大轮寺}
+        {PP} {大轮寺}
+    }
+    {太室山/太室山} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {峻极宫前} {dengfeng;zhengzhou}
+        }
+        {LMAP} {太室山}
+        {PP} {太室山}
+    }
+    {姑苏慕容/姑苏慕容} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {慕容苏州入口} {guiyun;suzhou}
+        }
+        {LMAP} {姑苏慕容}
+        {PP} {姑苏慕容}
+    }
+    {威海卫/威海卫} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {威海卫} {dengzhou}
+        }
+        {LMAP} {威海卫}
+        {PP} {威海卫}
+    }
+    {小山村/小山村} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {华山村} {huashan;nanyang;quanzhen}
+        }
+        {LMAP} {小山村}
+        {PP} {小山村}
+    }
+    {少林寺/少林寺} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {少林寺} {dengfeng}
+        }
+        {LMAP} {少林寺}
+        {PP} {少林寺}
+    }
+    {岳王墓/岳王墓} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {岳王墓} {linan;meizhuang}
+        }
+        {LMAP} {岳王墓}
+        {PP} {岳王墓}
+    }
+    {岳阳/岳阳} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {岳阳} {changsha;jiangzhou;jingzhou;nanchang}
+        }
+        {LMAP} {岳阳}
+        {PP} {岳阳}
+    }
+    {峨嵋/峨嵋} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {峨嵋山} {chengdu;yuzhou}
+        }
+        {LMAP} {峨嵋}
+        {PP} {峨嵋}
+    }
+    {平西王府/平西王府} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {平西王府} {kunming}
+        }
+        {LMAP} {平西王府}
+        {PP} {平西王府}
+    }
+    {广州府/广州府} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {广州府} {shengfeng}
+        }
+        {LMAP} {广州府}
+        {PP} {广州府}
+    }
+    {庐陵/庐陵} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {庐陵} {longhu;nanchang;yuanzhou;yuechengling}
+        }
+        {LMAP} {庐陵}
+        {PP} {庐陵}
+    }
+    {建宁府/建宁府} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {建宁府北津渡口} {quanzhou;wuyi}
+        }
+        {LMAP} {建宁府}
+        {PP} {建宁府}
+    }
+    {建康府北城/建康府北城} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {建康府清凉门} {chaoyang;shence;tongguan;zhengyang}
+        }
+        {LMAP} {建康府北城}
+        {PP} {建康府北城}
+    }
+    {建康府南城/建康府南城} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {建康府朝阳门} {qingliang;shence;suzhou;wuxi;yixing;zhengyang;zhenjiang}
+        }
+        {LMAP} {建康府南城}
+        {PP} {建康府南城}
+    }
+    {张家口/张家口} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {张家口} {beijing;datong;menggu}
+        }
+        {LMAP} {张家口}
+        {PP} {张家口}
+    }
+    {归云庄/归云庄} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {归云庄} {jiankang;murong;suzhou}
+        }
+        {LMAP} {归云庄}
+        {PP} {归云庄}
+    }
+    {徐州/徐州} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {徐州} {huaibei;qufu;yangzhou}
+        }
+        {LMAP} {徐州}
+        {PP} {徐州}
+    }
+    {成都/成都} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {成都} {dali;emei;hanzhong;qingcheng;tianlong;yuzhou;zanpu}
+        }
+        {LMAP} {成都}
+        {PP} {成都}
+    }
+    {扬州/扬州} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {扬州} {gaibang;haozhou;jiankang;shashou;xinyang;xuzhou;zhenjiang}
+        }
+        {LMAP} {扬州}
+        {PP} {扬州}
+    }
+    {无锡/无锡} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {无锡} {jiankang;suzhou;tieling}
+        }
+        {LMAP} {无锡}
+        {PP} {无锡}
+    }
+    {昆明/昆明} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {昆明} {dali;miaojiang;pingxi}
+        }
+        {LMAP} {昆明}
+        {PP} {昆明}
+    }
+    {明州/明州} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {明州府} {linan;shaoxing;yandang}
+        }
+        {LMAP} {明州}
+        {PP} {明州}
+    }
+    {晋阳/晋阳} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {晋州} {fenglingdu;jinyang;jiyuan}
+        }
+        {LMAP} {晋阳}
+        {PP} {晋阳}
+    }
+    {曲阜/曲阜} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {曲阜} {huaibei;puyang;qingzhou;taian;taishan;xuzhou}
+        }
+        {LMAP} {曲阜}
+        {PP} {曲阜}
+    }
+    {杀手帮/杀手帮} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {杀手帮} {jiankang;xinyang;yangzhou}
+        }
+        {LMAP} {杀手帮}
+        {PP} {杀手帮}
+    }
+    {松风观/松风观} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {松风观} {houshan}
+        }
+        {LMAP} {松风观}
+        {PP} {松风观}
+    }
+    {梅庄/梅庄} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {梅庄} {linan;yuewangmu}
+        }
+        {LMAP} {梅庄}
+        {PP} {梅庄}
+    }
+    {武夷山/武夷山} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {武夷山} {jianning;longquan;quanzhou}
+        }
+        {LMAP} {武夷山}
+        {PP} {武夷山}
+    }
+    {武当山/武当山} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {武当山} {xiangyang}
+        }
+        {LMAP} {武当山}
+        {PP} {武当山}
+    }
+    {汉中/汉中} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {汉中} {changan;chengdu}
+        }
+        {LMAP} {汉中}
+        {PP} {汉中}
+    }
+    {汉口镇/汉口镇} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {汉口镇} {jiangzhou;jingzhou;xiangyang;xinyang}
+        }
+        {LMAP} {汉口镇}
+        {PP} {汉口镇}
+    }
+    {江州/江州} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {江州} {nanchang;qimen;shangrao;tongguan;xinyang;yueyang}
+        }
+        {LMAP} {江州}
+        {PP} {江州}
+    }
+    {河北/河北} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {濮阳} {cangzhou;handan;jiyuan;qufu;tongquetai}
+        }
+        {LMAP} {河北}
+        {PP} {河北}
+    }
+    {泉州/泉州} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {泉州} {fuzhou;jianning;jinjiang;nanshaolin;putian;wuyi}
+        }
+        {LMAP} {泉州}
+        {PP} {泉州}
+    }
+    {泰安/泰安} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {泰安} {qingzhou;qufu;taishan}
+        }
+        {LMAP} {泰安}
+        {PP} {泰安}
+    }
+    {泰山/泰山} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {泰山} {qingzhou;qufu;taian}
+        }
+        {LMAP} {泰山}
+        {PP} {泰山}
+    }
+    {洛阳/洛阳} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {洛阳} {changan;dengfeng;jiyuan;nanyang;qilincun;zhengzhou}
+        }
+        {LMAP} {洛阳}
+        {PP} {洛阳}
+    }
+    {渝州/渝州} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {沱江西岸渡口} {chengdu}
+        }
+        {LMAP} {渝州}
+        {PP} {渝州}
+    }
+    {温州府/温州府} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {温州瓯江北岸} {chuzhou}
+        }
+        {LMAP} {温州府}
+        {PP} {温州府}
+    }
+    {湖州/湖州} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {湖州府} {jiankang;jiaxing;linan;tongguan}
+        }
+        {LMAP} {湖州}
+        {PP} {湖州}
+    }
+    {湟中/湟中} 
+    {
+        {COLOR} {41;1;1;37}
+        {LINKS} 
+        {
+            {湟中} {huangshui;qinzhou;xingxiu}
+        }
+        {LMAP} {湟中}
+        {PP} {湟中}
+    }
+    {潮州/潮州} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {潮州府} {jinjiang;nanshaolin;shengfeng}
+        }
+        {LMAP} {潮州}
+        {PP} {潮州}
+    }
+    {濠州府/濠州府} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {濠州府} {xinyang;yangzhou}
+        }
+        {LMAP} {濠州府}
+        {PP} {濠州府}
+    }
+    {灵州/灵州} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {灵州} {huijiang;mingjiao}
+        }
+        {LMAP} {灵州}
+        {PP} {灵州}
+    }
+    {灵鹫宫/灵鹫宫} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {灵鹫宫} {huijiang}
+        }
+        {LMAP} {灵鹫宫}
+        {PP} {灵鹫宫}
+    }
+    {点苍山/点苍山} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {天龙寺} {chengdu;dali}
+        }
+        {LMAP} {点苍山}
+        {PP} {点苍山}
+    }
+    {登州/登州} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {登州} {qingzhou;weihaiwei}
+        }
+        {LMAP} {登州}
+        {PP} {登州}
+    }
+    {秦州/秦州} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {秦州} {changan;huanghe;huijiang}
+        }
+        {LMAP} {秦州}
+        {PP} {秦州}
+    }
+    {绍兴府/绍兴府} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {金华府} {linan;quzhou;shaoxing}
+        }
+        {LMAP} {绍兴府}
+        {PP} {绍兴府}
+    }
+    {苏州/苏州} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {苏州} {guiyun;jiankang;jiaxing;murong;tieling;wuxi;yixing;zhenjiang}
+        }
+        {LMAP} {苏州}
+        {PP} {苏州}
+    }
+    {苗疆/苗疆} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {衡州苗疆入口} {hengyang}
+        }
+        {LMAP} {苗疆}
+        {PP} {苗疆}
+    }
+    {荆州/荆州} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {荆州府} {hankou;xiangyang;xinyang;yueyang}
+        }
+        {LMAP} {荆州}
+        {PP} {荆州}
+    }
+    {蒙古/蒙古东部} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {蒙古} {zhangjiakou}
+        }
+        {LMAP} {蒙古东部}
+        {PP} {蒙古}
+    }
+    {衡山/衡山} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {衡山} {changsha;hengzhou}
+        }
+        {LMAP} {衡山}
+        {PP} {衡山}
+    }
+    {衡州/衡州} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {衡州} {changsha;hengshan;miaojiang;wuling}
+        }
+        {LMAP} {衡州}
+        {PP} {衡州}
+    }
+    {衢州/衢州} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {衢州府乌溪江南岸} {xianxia}
+        }
+        {LMAP} {衢州}
+        {PP} {衢州}
+    }
+    {袁州/袁州} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {袁水北岸} {changsha;nanchang}
+        }
+        {LMAP} {袁州}
+        {PP} {袁州}
+    }
+    {襄阳/襄阳} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {襄阳} {hankou;jingzhou;nanyang;wudang;xinyang}
+        }
+        {LMAP} {襄阳}
+        {PP} {襄阳}
+    }
+    {越城岭/UNKNOWN} 
+    {
+        {COLOR} {}
+        {LINKS} 
+        {
+            {湘江东岸越城岭入口} {luling}
+        }
+        {LMAP} {}
+        {PP} {越城岭}
+    }
+    {铜官山/铜官山} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {铜官山} {huzhou;jiangzhou;jiankang;qimen}
+        }
+        {LMAP} {铜官山}
+        {PP} {铜官山}
+    }
+    {铜雀台/UNKNOWN} 
+    {
+        {COLOR} {}
+        {LINKS} 
+        {
+            {铜雀台} {puyang}
+        }
+        {LMAP} {}
+        {PP} {铜雀台}
+    }
+    {镇江/镇江} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {镇江} {jiankang;suzhou;yangzhou;yixing}
+        }
+        {LMAP} {镇江}
+        {PP} {镇江}
+    }
+    {长安/长安} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {长安通化门} {jinguang;luoyang;mingde}
+        }
+        {LMAP} {长安}
+        {PP} {长安}
+    }
+    {长江北岸/长江北岸} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {信阳长江渡口} {hankou;xinyang}
+        }
+        {LMAP} {长江北岸}
+        {PP} {长江北岸}
+    }
+    {长江南岸/长江南岸} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {镇江长江渡口} {zhenjiang}
+        }
+        {LMAP} {长江南岸}
+        {PP} {长江南岸}
+    }
+    {长沙府/长沙府} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {长沙} {hengshan;hengzhou;nanchang;yuanzhou;yueyang}
+        }
+        {LMAP} {长沙府}
+        {PP} {长沙府}
+    }
+    {闽中/闽中} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {福州} {jianning;putian;quanzhou;wenzhou}
+        }
+        {LMAP} {闽中}
+        {PP} {闽中}
+    }
+    {雁荡山/雁荡山} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {雁荡山} {chuzhou;mingzhou;wenzhou}
+        }
+        {LMAP} {雁荡山}
+        {PP} {雁荡山}
+    }
+    {青城山/青城山} 
+    {
+        {COLOR} {45;1;1;37}
+        {LINKS} 
+        {
+            {岷江西岸渡口} {houshan}
+        }
+        {LMAP} {青城山}
+        {PP} {青城山}
+    }
+    {青州/青州} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {青州} {dengzhou;qufu;taian;taishan}
+        }
+        {LMAP} {青州}
+        {PP} {青州}
+    }
+    {麒麟村/麒麟村} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {麒麟村} {luoyang}
+        }
+        {LMAP} {麒麟村}
+        {PP} {麒麟村}
+    }
+    {黄山/黄山} 
+    {
+        {COLOR} {42;1;1;37}
+        {LINKS} 
+        {
+            {黄山} {linan;qimen}
+        }
+        {LMAP} {黄山}
+        {PP} {黄山}
+    }
+    {黄河北岸/黄河北岸} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {濮阳黄河渡口} {puyang}
+        }
+        {LMAP} {黄河北岸}
+        {PP} {黄河北岸}
+    }
+    {黄河南岸/黄河南岸} 
+    {
+        {COLOR} {46;1;1;37}
+        {LINKS} 
+        {
+            {洛阳黄河渡口} {luoyang}
+        }
+        {LMAP} {黄河南岸}
+        {PP} {黄河南岸}
+    }
+    {黑木崖/黑木崖} 
+    {
+        {COLOR} {43;1;1;37}
+        {LINKS} 
+        {
+            {日月神教} {jinyang;zhengding}
+        }
+        {LMAP} {黑木崖}
+        {PP} {黑木崖}
+    }
+    {龙泉镇/龙泉镇} 
+    {
+        {COLOR} {44;1;1;37}
+        {LINKS} 
+        {
+            {龙泉镇} {chuzhou;longhu;wuyi;xianxia}
+        }
+        {LMAP} {龙泉镇}
+        {PP} {龙泉镇}
+    }
+    {龙虎山/龙虎山} 
+    {
+        {COLOR} {44;1;37}
+        {LINKS} 
+        {
+            {龙虎山} {longquan;luling;nanchang;shangrao;xianxia;yuanzhou}
+        }
+        {LMAP} {龙虎山}
+        {PP} {龙虎山}
+    }
+}
+
+#CLASS {comm-store-tmp} CLOSE
