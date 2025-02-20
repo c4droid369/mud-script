@@ -1,0 +1,11 @@
+#CLASS {comm-store-tmp} OPEN
+
+#VARIABLE {dump-map.path.list}
+{
+    {武当山的俞岱岩住处-武当山的武当广场} {w;w;s;s;s;s}
+    {武当山的复真观二层-武当山的武当广场} {d;e;e;s;s;s}
+    {武当山的武当广场-武当山的俞岱岩住处} {n;n;n;n;e;e}
+    {武当山的武当广场-武当山的复真观二层} {n;n;n;w;w;u}
+}
+
+#CLASS {comm-store-tmp} CLOSE
