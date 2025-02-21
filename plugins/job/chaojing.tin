@@ -1,0 +1,44 @@
+#variable chaojing[META] {
+    {NAME} {chaojing}
+    {DESC} {泰山抄经}
+    {AUTHOR} {c4droid}
+};
+
+#function {chaojing.Init} {
+    #return true;
+}
+
+#alias {chaojing.Start} {
+    #class chaojing open;
+
+    #nop 任务别名;
+    #alias {chaojing.Accept} {ask yunyou sengren about job};
+    #alias {chaojing.Success} {ask yunyou sengren about job};
+    #alias {chaojing.Do} {write jing};
+
+    #nop 接取抄经任务;
+    #if { "$gMapRoom[name]" != "石门寺" } {
+        errLog 请在石门寺内待命;
+        #return false;
+    };
+    #else {
+        chaojing.Accept;
+    };
+
+    #nop 抄经触发器;
+    #action {云游僧人说道：很好，你直接去泰山石经峪抄经} {
+        xtt.Send {sms_sjy};
+        chaojing.Do;
+    };
+
+    #action {你默写良久，终于抄完了，看样子可以回去领工钱了。} {
+        xtt.Send {sjy_sms};
+        chaojing.Success;
+    };
+
+    #class chaojing close;
+
+    sync.Wait {
+        #class chaojing kill;
+    };
+}
