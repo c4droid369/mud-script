@@ -16,7 +16,7 @@
         #return false;
     };
 
-    xtt.Send {ask chongxu about job};
+    #send {ask chongxu about quest};
 
     #return true;
 };
@@ -29,7 +29,7 @@
         #return false;
     };
 
-    xtt.Send {ask chongxu about success};
+    #send {ask chongxu about success};
 
     #return true;
 };
@@ -42,7 +42,7 @@
         #return false;
     };
 
-    xtt.Send {ask chongxu about cancel};
+    #send {ask chongxu about cancel};
 
     #return true;
 };
@@ -57,321 +57,16 @@
     #nop 新手任务通用触发;
     #action {^你向冲虚道长打听有关『quest』的消息。$} {
         #nop 阵法任务触发;
-        #action {^冲虚道长说道：「武当派以真武七截阵闻名天下} {
-            #class wudang.zhenfa open;
-
-            #nop TODO: 空闲校场检测;
-            e;
-
-            #nop 如果东面有人，则3秒后再尝试进入东面房间，直到能够进入为止;
-            #action {^房间中已经有人在演习阵法} {
-                #delay 3 {e};
-            };
-
-            #nop 开始阵法演练;
-            zhenfa;
-
-            #nop 初始走位;
-            #action {%*一会走到%1位。} {
-                #variable pos %1;
-                #delay 1 {
-                    xtt.Send {zouwei $pos};
-                }
-            };
-
-            #nop 根据阵法进行走位;
-            #action {大家从自己现在的位置按照『%1五行阵』的要求往下走一步} {
-                #if { "%1" == "正" } {
-                    #switch {"$pos"} {
-                        #case {"金"} {
-                            xtt.Send {zouwei 水};
-                            #variable pos 水;
-                        };
-                        #case {"木"} {
-                            xtt.Send {zouwei 火};
-                            #variable pos 火;
-                        };
-                        #case {"水"} {
-                            xtt.Send {zouwei 木};
-                            #variable pos 木;
-                        };
-                        #case {"火"} {
-                            xtt.Send {zouwei 土};
-                            #variable pos 土;
-                        };
-                        #case {"土"} {
-                            xtt.Send {zouwei 金};
-                            #variable pos 金;
-                        };
-                    }
-                };
-                #else {   
-                    #switch {"$pos"} {
-                        #case {"金"} {
-                            xtt.Send {zouwei 木};
-                            #variable pos 木;
-                        };
-                        #case {"木"} {
-                            xtt.Send {zouwei 土};
-                            #variable pos 土;
-                        };
-                        #case {"水"} {
-                            xtt.Send {zouwei 火};
-                            #variable pos 火;
-                        };
-                        #case {"火"} {
-                            xtt.Send {zouwei 金};
-                            #variable pos 金;
-                        };
-                        #case {"土"} {
-                            xtt.Send {zouwei 水};
-                            #variable pos 水;
-                        };
-                    }
-                };
-            };
-
-            #action {阵法教习挥了挥旗喊道：五行阵演练到此结束} {
-                w;
-                wudang.Success;
-            };
-
-            #class wudang.zhenfa close;
-            
-            sync.Wait {
-                #class wudang.zhenfa kill;
-            };
-        };
+        #action {^冲虚道长说道：「武当派以真武七截阵闻名天下} { zhenfa.Start; };
 
         #nop 炼丹任务触发;
-        #action {^冲虚道长说道：「武当三侠最近迷上了炼丹} {
-            #class wudang.liandan open;
+        #action {^冲虚道长说道：「武当三侠最近迷上了炼丹} { liandan.Start; };
 
-            #alias {liandan} {ask yu about 炼丹};
-
-            path.Walk 武当山的武当广场-武当山的俞岱岩住处;
-
-            liandan;
-
-            #action {^俞岱岩说道：「我最近正在研究炼制炼制黑玉断续膏} {
-                #nop 炼丹触发器;
-                #action {~*********\e[1;31m^\e[2;37;0m********} {
-                    #delay 1 {
-                        xtt.Send {change L};
-                    } 0;
-                };
-                #action {~*********\e[1;35m^\e[2;37;0m********} {
-                    #delay 1 {
-                        xtt.Send {change M};
-                    } 0;
-                };
-                #action {~*********\e[1;33m^\e[2;37;0m********} {
-                    #delay 1 {
-                        xtt.Send {change H};
-                    } 0;
-                };
-                
-                #nop 进入南面房间炼丹;
-                s;
-                zuo;
-                kan;
-            };
-
-            #nop 炼丹成功，向任务NPC汇报，回到任务接取处提交任务;
-            #action {^丹炉里传出来一阵清香} {
-                zhanqi;
-                n;
-                liandan;
-
-                path.Walk 武当山的俞岱岩住处-武当山的武当广场;
-
-                wudang.Success;
-            };
-
-            #class wudang.liandan close;
-
-            sync.Wait {
-                #class wudang.liandan kill;
-            };
-        };
-
-        #nop WIP: 诵经任务触发;
-        #action {^冲虚道长说道：「今天全派弟子要在%*熟读典籍，据说要诵唱%*的%*} {
-            #class wudang.songjing open;
-
-            #nop 任务内容;
-            #variable position %1;
-            #variable book %2;
-            #variable chapter %3;
-
-            #nop 经典章节索引;
-            #variable book-index {
-                {庄子·内篇·逍遥游}{1}
-                {庄子·内篇·齐物论}{21}
-                {庄子·内篇·养生主}{69}
-                {庄子·内篇·人间世}{1}
-                {庄子·内篇·德充符}{46}
-                {庄子·内篇·大宗师}{77}
-                {庄子·内篇·应帝王}{124}
-                {庄子·外篇·骈拇}{1}
-                {庄子·外篇·马蹄}{4}
-                {庄子·外篇·胠箧}{12}
-                {庄子·外篇·在宥}{31}
-                {庄子·外篇·天地}{66}
-                {庄子·外篇·天道}{116}
-                {庄子·外篇·天运}{151}
-                {庄子·外篇·刻意}{190}
-                {庄子·外篇·缮性}{201}
-                {庄子·外篇·秋水}{1}
-                {庄子·外篇·至乐}{51}
-                {庄子·外篇·达生}{69}
-                {庄子·外篇·山木}{107}
-                {庄子·外篇·田子方}{143}
-                {庄子·外篇·知北游}{177}
-                {庄子·杂篇·庚桑楚}{1}
-                {庄子·杂篇·徐无鬼}{42}
-                {庄子·杂篇·则阳}{98}
-                {庄子·杂篇·外物}{141}
-                {庄子·杂篇·寓言}{168}
-                {庄子·杂篇·让王}{1}
-                {庄子·杂篇·盗跖}{47}
-                {庄子·杂篇·说剑}{99}
-                {庄子·杂篇·渔父}{114}
-                {庄子·杂篇·列御寇}{139}
-                {庄子·杂篇·天下}{165}
-                {阴符经}{1}
-                {第一章}{1}
-                {第二章}{2}
-                {第三章}{3}
-                {第四章}{4}
-                {第五章}{5}
-                {第六章}{6}
-                {第七章}{7}
-                {第八章}{8}
-                {第九章}{9}
-                {第十章}{10}
-                {第十一章}{11}
-                {第十二章}{12}
-                {第十三章}{13}
-                {第十四章}{14}
-                {第十五章}{15}
-                {第十六章}{17}
-                {第十七章}{18}
-                {第十八章}{19}
-                {第十九章}{20}
-                {第二十章}{21}
-                {第二十一章}{23}
-                {第二十二章}{24}
-                {第二十三章}{25}
-                {第二十四章}{26}
-                {第二十五章}{27}
-                {第二十六章}{28}
-                {第二十七章}{29}
-                {第二十八章}{30}
-                {第二十九章}{31}
-                {第三十章}{32}
-                {第三十一章}{33}
-                {第三十二章}{35}
-                {第三十三章}{36}
-                {第三十四章}{37}
-                {第三十五章}{38}
-                {第三十六章}{39}
-                {第三十七章}{40}
-                {第三十八章}{41}
-                {第三十九章}{43}
-                {第四十章}{45}
-                {第四十一章}{1}
-                {第四十二章}{2}
-                {第四十三章}{3}
-                {第四十四章}{4}
-                {第四十五章}{5}
-                {第四十六章}{6}
-                {第四十七章}{7}
-                {第四十八章}{8}
-                {第四十九章}{9}
-                {第五十章}{10}
-                {第五十一章}{11}
-                {第五十二章}{12}
-                {第五十三章}{13}
-                {第五十四章}{14}
-                {第五十五章}{15}
-                {第五十六章}{16}
-                {第五十七章}{17}
-                {第五十八章}{18}
-                {第五十九章}{19}
-                {第六十章}{20}
-                {第六十一章}{21}
-                {第六十二章}{22}
-                {第六十三章}{23}
-                {第六十四章}{24}
-                {第六十五章}{26}
-                {第六十六章}{27}
-                {第六十七章}{28}
-                {第六十八章}{30}
-                {第六十九章}{31}
-                {第七十章}{32}
-                {第七十一章}{33}
-                {第七十二章}{34}
-                {第七十三章}{35}
-                {第七十四章}{36}
-                {第七十五章}{37}
-                {第七十六章}{38}
-                {第七十七章}{39}
-                {第七十八章}{40}
-                {第七十九章}{41}
-                {第八十章}{42}
-                {第八十一章}{43}
-            };
-
-            #nop TODO: 从武当广场去诵经地点，如果碰到特殊诵经地点，则直接取消诵经任务;
-
-            #nop 若经验小于2000，不满足复真观借书的条件，直接取消任务;
-            #if { "$char[HP][经验]" < "2000" } {
-                errLog 当前经验：$char[HP][经验]，不满足借书条件，无法借书;
-                wudang.Cancel;
-            };
-            #else {
-                path.Walk 武当山的武当广场-武当山的复真观二层;
-                xtt.Send {jie $book};
-                path.Walk 武当山的复真观二层-武当山的武当广场;
-            };
-
-
-            #nop 该函数计算目标经文的页码;
-            #function pageOffset {
-                #local chapterName ;
-                #local pageInChapter ;
-                #local skip $book-index[$chapterName];
-                #math page { $skip + $pageInChapter - 1 };
-                #return $page;
-            }
-
-            xtt.Send {page @pageOffset{}};
-
-            #nop 匹配经文内容;
-            #action {================================================================\n%a\n================================================================}{   
-                #variable pageContent %1;
-                #replace pageContent {=}{};
-                #replace pageContent { }{};
-                #replace pageContent {\n}{};
-            };
-
-            xtt.Send {chanting $pageContent};
-            
-            #nop TODO: 返回到武当广场提交任务;
-
-            #class wudang.songjing close;
-            
-            sync.Wait {
-                #class wudang.songjing kill;
-            };
-        };
+        #nop 诵经任务触发;
+        #action {^冲虚道长说道：「今天全派弟子要在%*熟读典籍，据说要诵唱%*的%*(%*)} { songjing.Start; };
 
         #nop TODO: 采气任务触发;
-        #action {^冲虚道长说道：「道家炼气最讲究时辰和地点了} {
-            #nop TODO;
-            #delay 3 {wudang.Cancel};
-        }
+        #action {^冲虚道长说道：「道家炼气最讲究时辰和地点了} { caiqi.Start; };
     };
 
     #nop 关闭class;
@@ -381,4 +76,321 @@
     sync.Wait {
         #class wudang kill;
     };
+}
+
+#nop 阵法;
+#alias {zhenfa.Start} {
+    #class wudang.zhenfa open;
+
+    #nop TODO: 空闲校场检测;
+    e;
+
+    #nop 如果东面有人，则3秒后再尝试进入东面房间，直到能够进入为止;
+    #action {^房间中已经有人在演习阵法} {
+        #delay 3 {e};
+    };
+
+    #nop 开始阵法演练;
+    zhenfa;
+
+    #nop 初始走位;
+    #action {%*一会走到%1位。} {
+        #variable pos %1;
+        #delay 1 {
+            #send {zouwei $pos};
+        }
+    };
+
+    #nop 根据阵法进行走位;
+    #action {大家从自己现在的位置按照『%1五行阵』的要求往下走一步} {
+        #if { "%1" == "正" } {
+            #switch {"$pos"} {
+                #case {"金"} {
+                    #send {zouwei 水};
+                    #variable pos 水;
+                };
+                #case {"木"} {
+                    #send {zouwei 火};
+                    #variable pos 火;
+                };
+                #case {"水"} {
+                    #send {zouwei 木};
+                    #variable pos 木;
+                };
+                #case {"火"} {
+                    #send {zouwei 土};
+                    #variable pos 土;
+                };
+                #case {"土"} {
+                    #send {zouwei 金};
+                    #variable pos 金;
+                };
+            }
+        };
+        #else {   
+            #switch {"$pos"} {
+                #case {"金"} {
+                    #send {zouwei 木};
+                    #variable pos 木;
+                };
+                #case {"木"} {
+                    #send {zouwei 土};
+                    #variable pos 土;
+                };
+                #case {"水"} {
+                    #send {zouwei 火};
+                    #variable pos 火;
+                };
+                #case {"火"} {
+                    #send {zouwei 金};
+                    #variable pos 金;
+                };
+                #case {"土"} {
+                    #send {zouwei 水};
+                    #variable pos 水;
+                };
+            }
+        };
+    };
+
+    #action {阵法教习挥了挥旗喊道：五行阵演练到此结束} {
+        w;
+        wudang.Success;
+    };
+
+    #class wudang.zhenfa close;
+            
+    sync.Wait {
+        #class wudang.zhenfa kill;
+    };
+}
+
+#nop 炼丹;
+#alias {liandan.Start} {
+    #class wudang.liandan open;
+
+    #alias {liandan} {ask yu about 炼丹};
+
+    path.Walk 武当山的武当广场-武当山的俞岱岩住处;
+
+    liandan;
+
+    #action {^俞岱岩说道：「我最近正在研究炼制炼制黑玉断续膏} {
+        #nop 炼丹触发器;
+        #action {~*********\e[1;31m^\e[2;37;0m********} { #send {change L}; };
+        #action {~*********\e[1;35m^\e[2;37;0m********} { #send {change M}; };
+        #action {~*********\e[1;33m^\e[2;37;0m********} { #send {change H}; };
+        
+        #nop 进入南面房间炼丹;
+        s;
+        zuo;
+        kan;
+    };
+
+    #nop 炼丹成功，向任务NPC汇报，回到任务接取处提交任务;
+    #action {^丹炉里传出来一阵清香} {
+        zhanqi;
+        n;
+        liandan;
+
+        path.Walk 武当山的俞岱岩住处-武当山的武当广场;
+
+        wudang.Success;
+    };
+
+    #class wudang.liandan close;
+
+    sync.Wait {
+        #class wudang.liandan kill;
+    };
+}
+
+#nop 诵经;
+#alias {songjing.Start} {
+    #class wudang.songjing open;
+
+    #nop 任务内容;
+    #variable position %1;
+    #variable book %2;
+    #variable chapter %3;
+    #variable page %4;
+
+    #nop 经典章节索引;
+    #variable book-index {
+        {庄子·内篇·逍遥游}{1}
+        {庄子·内篇·齐物论}{21}
+        {庄子·内篇·养生主}{69}
+        {庄子·内篇·人间世}{1}
+        {庄子·内篇·德充符}{46}
+        {庄子·内篇·大宗师}{77}
+        {庄子·内篇·应帝王}{124}
+        {庄子·外篇·骈拇}{1}
+        {庄子·外篇·马蹄}{4}
+        {庄子·外篇·胠箧}{12}
+        {庄子·外篇·在宥}{31}
+        {庄子·外篇·天地}{66}
+        {庄子·外篇·天道}{116}
+        {庄子·外篇·天运}{151}
+        {庄子·外篇·刻意}{190}
+        {庄子·外篇·缮性}{201}
+        {庄子·外篇·秋水}{1}
+        {庄子·外篇·至乐}{51}
+        {庄子·外篇·达生}{69}
+        {庄子·外篇·山木}{107}
+        {庄子·外篇·田子方}{143}
+        {庄子·外篇·知北游}{177}
+        {庄子·杂篇·庚桑楚}{1}
+        {庄子·杂篇·徐无鬼}{42}
+        {庄子·杂篇·则阳}{98}
+        {庄子·杂篇·外物}{141}
+        {庄子·杂篇·寓言}{168}
+        {庄子·杂篇·让王}{1}
+        {庄子·杂篇·盗跖}{47}
+        {庄子·杂篇·说剑}{99}
+        {庄子·杂篇·渔父}{114}
+        {庄子·杂篇·列御寇}{139}
+        {庄子·杂篇·天下}{165}
+        {阴符经}{1}
+        {第一章}{1}
+        {第二章}{2}
+        {第三章}{3}
+        {第四章}{4}
+        {第五章}{5}
+        {第六章}{6}
+        {第七章}{7}
+        {第八章}{8}
+        {第九章}{9}
+        {第十章}{10}
+        {第十一章}{11}
+        {第十二章}{12}
+        {第十三章}{13}
+        {第十四章}{14}
+        {第十五章}{15}
+        {第十六章}{17}
+        {第十七章}{18}
+        {第十八章}{19}
+        {第十九章}{20}
+        {第二十章}{21}
+        {第二十一章}{23}
+        {第二十二章}{24}
+        {第二十三章}{25}
+        {第二十四章}{26}
+        {第二十五章}{27}
+        {第二十六章}{28}
+        {第二十七章}{29}
+        {第二十八章}{30}
+        {第二十九章}{31}
+        {第三十章}{32}
+        {第三十一章}{33}
+        {第三十二章}{35}
+        {第三十三章}{36}
+        {第三十四章}{37}
+        {第三十五章}{38}
+        {第三十六章}{39}
+        {第三十七章}{40}
+        {第三十八章}{41}
+        {第三十九章}{43}
+        {第四十章}{45}
+        {第四十一章}{1}
+        {第四十二章}{2}
+        {第四十三章}{3}
+        {第四十四章}{4}
+        {第四十五章}{5}
+        {第四十六章}{6}
+        {第四十七章}{7}
+        {第四十八章}{8}
+        {第四十九章}{9}
+        {第五十章}{10}
+        {第五十一章}{11}
+        {第五十二章}{12}
+        {第五十三章}{13}
+        {第五十四章}{14}
+        {第五十五章}{15}
+        {第五十六章}{16}
+        {第五十七章}{17}
+        {第五十八章}{18}
+        {第五十九章}{19}
+        {第六十章}{20}
+        {第六十一章}{21}
+        {第六十二章}{22}
+        {第六十三章}{23}
+        {第六十四章}{24}
+        {第六十五章}{26}
+        {第六十六章}{27}
+        {第六十七章}{28}
+        {第六十八章}{30}
+        {第六十九章}{31}
+        {第七十章}{32}
+        {第七十一章}{33}
+        {第七十二章}{34}
+        {第七十三章}{35}
+        {第七十四章}{36}
+        {第七十五章}{37}
+        {第七十六章}{38}
+        {第七十七章}{39}
+        {第七十八章}{40}
+        {第七十九章}{41}
+        {第八十章}{42}
+        {第八十一章}{43}
+    };
+
+    #nop 如果碰到特殊诵经地点，则直接取消诵经任务;
+    #switch { "$position" } {
+        #case { "天柱峰下" } { wudang.Cancel; };
+        #case { "太子岩" } { wudang.Cancel; };
+        #case { "潘神洞" } { wudang.Cancel; };
+        #case { "一天门" } { wudang.Cancel; };
+        #case { "五老峰" } { wudang.Cancel; };
+        #case { "三老峰" } { wudang.Cancel; };
+        #case { "虎头岩" } { wudang.Cancel; };
+        #case { "两仪殿" } { wudang.Cancel; };
+        #case { "后殿" } { wudang.Cancel; };
+        #case { "桃园篱笆" } { wudang.Cancel; };
+        #case { "桃园木门" } { wudang.Cancel; };
+        #case { "竹林小院" } { wudang.Cancel; };
+        #case { "小园" } { wudang.Cancel; };
+        #case { "小屋" } { wudang.Cancel; };
+    };
+
+    #nop 若经验小于2000，不满足复真观借书的条件，直接取消任务;
+    #if { "$char[HP][经验]" < "2000" } {
+        errLog 当前经验：$char[HP][经验]，不满足借书条件，无法借书;
+        wudang.Cancel;
+    };
+    #else {
+        path.Walk 武当山的武当广场-武当山的复真观二层;
+        #send {jie $book};
+        path.Walk 武当山的复真观二层-武当山的武当广场;
+    };
+
+    #math page {$page + $book-index[$chapter] - 1};
+
+    #send {page $page};
+
+    #nop 匹配经文内容;
+    #action {================================================================\n%a\n================================================================}{   
+        #variable pageContent %1;
+        #replace pageContent {=}{};
+        #replace pageContent { }{};
+        #replace pageContent {\n}{};
+    };
+
+    path.Walk 武当山的武当广场-武当山的$position;
+
+    #send {chanting $page $pageContent};
+
+    path.Walk 武当山的$position-武当山的武当广场;
+
+    wudang.Success;
+
+    #class wudang.songjing close;
+            
+    sync.Wait {
+        #class wudang.songjing kill;
+    };
+}
+
+#nop 采气;
+#alias {caiqi.Start} {
+    #delay 3 {wudang.Cancel;};
 }
