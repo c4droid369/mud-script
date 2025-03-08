@@ -1,9 +1,0 @@
-#variable huashan[META] {
-	{NAME} {huashan}
-	{DESC} {华山派新手任务}
-	{AUTHOR} {c4droid}
-};
-
-#function {huashan.Init} {
-	#return true;
-}

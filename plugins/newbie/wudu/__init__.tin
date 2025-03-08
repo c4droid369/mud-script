@@ -1,0 +1,15 @@
+#variable wudu[META] {
+    {NAME} {wudu}
+    {DESC} {五毒教新手任务}
+    {AUTHOR} {c4droid}
+}
+
+#function {wudu.Init} {
+    #return true;
+}
+
+#alias {wudu.Accept} {
+    xtt.Send {ask gu about job};
+}
+
+#alias {job} {wudu.Accept}
